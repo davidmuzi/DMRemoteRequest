@@ -24,7 +24,7 @@ To the watch extension add:
 
 ## Usage
 
-### In host app
+### In Host App
 
 In your AppDelegate pass the openApplication call to `DMRemoteRequest`
 
@@ -39,7 +39,7 @@ To handle a request from the watch, register a block or a class to handle it
 
 ```obj-c
 [DMRemoteRequestCoordinator registerBlockForMethod:@"getState" handler:^NSDictionary *(NSDictionary *userInfo) {
-    return @{@"state": @"some data"};
+    return @{@"state": @"All systems go!"};
 }];
 ```
 
@@ -49,9 +49,15 @@ To send a notification to the watch,
 [DMRemoteRequestCoordinator notifyWatch];
 ```
 
-### In watch extension
+### In Watch Extension
 
 To request data from the host application, in your watch extension use the `application:handleWatchKitExtensionRequest:reply:` method on WKInterfaceController, and include the key `DMMethodNameKey` with the method name for the object.
+
+```obj-c
+    [WKInterfaceController openParentApplication:@{DMMethodNameKey: @"getState"} reply:^(NSDictionary *replyInfo, NSError *error) {
+        NSLog(@"state: %@", replyInfo[@"state"]);
+    }];
+```
 
 To receive notifications from the host app, register an observer for the notification `DMRemoteCommandNotificationName`.  If you want to send data bi-directionally, [MMWormHole](https://github.com/mutualmobile/MMWormhole) can also be used in companion with DMRemoteRequest.
 
