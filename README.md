@@ -54,9 +54,9 @@ To send a notification to the watch,
 To request data from the host application, in your watch extension use the `application:handleWatchKitExtensionRequest:reply:` method on WKInterfaceController, and include the key `DMMethodNameKey` with the method name for the object.
 
 ```obj-c
-    [WKInterfaceController openParentApplication:@{DMMethodNameKey: @"getState"} reply:^(NSDictionary *replyInfo, NSError *error) {
-        NSLog(@"state: %@", replyInfo[@"state"]);
-    }];
+[WKInterfaceController openParentApplication:@{DMMethodNameKey: @"getState"} reply:^(NSDictionary *replyInfo, NSError *error) {
+    NSLog(@"state: %@", replyInfo[@"state"]);
+}];
 ```
 
 To receive notifications from the host app, register an observer for the notification `DMRemoteCommandNotificationName`.  If you want to send data bi-directionally, [MMWormHole](https://github.com/mutualmobile/MMWormhole) can also be used in companion with DMRemoteRequest.
