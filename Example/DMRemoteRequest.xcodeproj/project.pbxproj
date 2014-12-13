@@ -1,0 +1,718 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BEAEB4911A3C96D2003D26F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4901A3C96D2003D26F6 /* main.m */; };
+		BEAEB4941A3C96D2003D26F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4931A3C96D2003D26F6 /* AppDelegate.m */; };
+		BEAEB4971A3C96D2003D26F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4961A3C96D2003D26F6 /* ViewController.m */; };
+		BEAEB49A1A3C96D2003D26F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB4981A3C96D2003D26F6 /* Main.storyboard */; };
+		BEAEB49C1A3C96D2003D26F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB49B1A3C96D2003D26F6 /* Images.xcassets */; };
+		BEAEB49F1A3C96D2003D26F6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB49D1A3C96D2003D26F6 /* LaunchScreen.xib */; };
+		BEAEB4AB1A3C96D2003D26F6 /* DMRemoteRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4AA1A3C96D2003D26F6 /* DMRemoteRequestTests.m */; };
+		BEAEB4C01A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m */; };
+		BEAEB4CD1A3C992B003D26F6 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4CC1A3C992B003D26F6 /* InterfaceController.m */; };
+		BEAEB4D01A3C992B003D26F6 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4CF1A3C992B003D26F6 /* NotificationController.m */; };
+		BEAEB4D21A3C992B003D26F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB4D11A3C992B003D26F6 /* Images.xcassets */; };
+		BEAEB4D61A3C992B003D26F6 /* DMRemoteRequest WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB4D51A3C992B003D26F6 /* DMRemoteRequest WatchKit App.app */; };
+		BEAEB4DD1A3C992B003D26F6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB4DC1A3C992B003D26F6 /* Interface.storyboard */; };
+		BEAEB4DF1A3C992B003D26F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB4DE1A3C992B003D26F6 /* Images.xcassets */; };
+		BEAEB4E21A3C992B003D26F6 /* DMRemoteRequest WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BEAEB4C61A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BEAEB4ED1A3C9949003D26F6 /* DMRemoteRequestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4EC1A3C9949003D26F6 /* DMRemoteRequestObserver.m */; };
+		BEAEB4F01A3CA1ED003D26F6 /* SomeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4EF1A3CA1ED003D26F6 /* SomeOperation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEAEB4A51A3C96D2003D26F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEAEB4831A3C96D2003D26F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEAEB48A1A3C96D2003D26F6;
+			remoteInfo = DMRemoteRequest;
+		};
+		BEAEB4D71A3C992B003D26F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEAEB4831A3C96D2003D26F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEAEB4D41A3C992B003D26F6;
+			remoteInfo = "DMRemoteRequest WatchKit App";
+		};
+		BEAEB4E01A3C992B003D26F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEAEB4831A3C96D2003D26F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEAEB4C51A3C992A003D26F6;
+			remoteInfo = "DMRemoteRequest WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BEAEB4E91A3C992B003D26F6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BEAEB4E21A3C992B003D26F6 /* DMRemoteRequest WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BEAEB48B1A3C96D2003D26F6 /* DMRemoteRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMRemoteRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAEB48F1A3C96D2003D26F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAEB4901A3C96D2003D26F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEAEB4921A3C96D2003D26F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BEAEB4931A3C96D2003D26F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BEAEB4951A3C96D2003D26F6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BEAEB4961A3C96D2003D26F6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BEAEB4991A3C96D2003D26F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BEAEB49B1A3C96D2003D26F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEAEB49E1A3C96D2003D26F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BEAEB4A41A3C96D2003D26F6 /* DMRemoteRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMRemoteRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAEB4A91A3C96D2003D26F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAEB4AA1A3C96D2003D26F6 /* DMRemoteRequestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMRemoteRequestTests.m; sourceTree = "<group>"; };
+		BEAEB4BD1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestCoordinator.h; path = "../../DMRemoteRequest/Host App/DMRemoteRequestCoordinator.h"; sourceTree = "<group>"; };
+		BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMRemoteRequestCoordinator.m; path = "../../DMRemoteRequest/Host App/DMRemoteRequestCoordinator.m"; sourceTree = "<group>"; };
+		BEAEB4BF1A3C98D6003D26F6 /* DMRemoteRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestProtocol.h; path = "../../DMRemoteRequest/Host App/DMRemoteRequestProtocol.h"; sourceTree = "<group>"; };
+		BEAEB4C11A3C98E6003D26F6 /* DMRemoteRequestPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestPrivate.h; path = ../../DMRemoteRequest/DMRemoteRequestPrivate.h; sourceTree = "<group>"; };
+		BEAEB4C61A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DMRemoteRequest WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAEB4C91A3C992A003D26F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAEB4CA1A3C992A003D26F6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		BEAEB4CB1A3C992B003D26F6 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		BEAEB4CC1A3C992B003D26F6 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		BEAEB4CE1A3C992B003D26F6 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		BEAEB4CF1A3C992B003D26F6 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		BEAEB4D11A3C992B003D26F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEAEB4D51A3C992B003D26F6 /* DMRemoteRequest WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMRemoteRequest WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEAEB4DB1A3C992B003D26F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEAEB4DC1A3C992B003D26F6 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		BEAEB4DE1A3C992B003D26F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEAEB4EB1A3C9949003D26F6 /* DMRemoteRequestObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestObserver.h; path = "../../DMRemoteRequest/Watch Extension/DMRemoteRequestObserver.h"; sourceTree = "<group>"; };
+		BEAEB4EC1A3C9949003D26F6 /* DMRemoteRequestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMRemoteRequestObserver.m; path = "../../DMRemoteRequest/Watch Extension/DMRemoteRequestObserver.m"; sourceTree = "<group>"; };
+		BEAEB4EE1A3CA1ED003D26F6 /* SomeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeOperation.h; sourceTree = "<group>"; };
+		BEAEB4EF1A3CA1ED003D26F6 /* SomeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeOperation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEAEB4881A3C96D2003D26F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4A11A3C96D2003D26F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4C31A3C992A003D26F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEAEB4821A3C96D2003D26F6 = {
+			isa = PBXGroup;
+			children = (
+				BEAEB48D1A3C96D2003D26F6 /* DMRemoteRequestExample */,
+				BEAEB4A71A3C96D2003D26F6 /* DMRemoteRequestTests */,
+				BEAEB4C71A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension */,
+				BEAEB4D91A3C992B003D26F6 /* DMRemoteRequest WatchKit App */,
+				BEAEB48C1A3C96D2003D26F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEAEB48C1A3C96D2003D26F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB48B1A3C96D2003D26F6 /* DMRemoteRequest.app */,
+				BEAEB4A41A3C96D2003D26F6 /* DMRemoteRequestTests.xctest */,
+				BEAEB4C61A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension.appex */,
+				BEAEB4D51A3C992B003D26F6 /* DMRemoteRequest WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEAEB48D1A3C96D2003D26F6 /* DMRemoteRequestExample */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4B41A3C96F0003D26F6 /* DMRemoteRequest */,
+				BEAEB4921A3C96D2003D26F6 /* AppDelegate.h */,
+				BEAEB4931A3C96D2003D26F6 /* AppDelegate.m */,
+				BEAEB4951A3C96D2003D26F6 /* ViewController.h */,
+				BEAEB4961A3C96D2003D26F6 /* ViewController.m */,
+				BEAEB4EE1A3CA1ED003D26F6 /* SomeOperation.h */,
+				BEAEB4EF1A3CA1ED003D26F6 /* SomeOperation.m */,
+				BEAEB4981A3C96D2003D26F6 /* Main.storyboard */,
+				BEAEB49B1A3C96D2003D26F6 /* Images.xcassets */,
+				BEAEB49D1A3C96D2003D26F6 /* LaunchScreen.xib */,
+				BEAEB48E1A3C96D2003D26F6 /* Supporting Files */,
+			);
+			name = DMRemoteRequestExample;
+			path = DMRemoteRequest;
+			sourceTree = "<group>";
+		};
+		BEAEB48E1A3C96D2003D26F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB48F1A3C96D2003D26F6 /* Info.plist */,
+				BEAEB4901A3C96D2003D26F6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEAEB4A71A3C96D2003D26F6 /* DMRemoteRequestTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4AA1A3C96D2003D26F6 /* DMRemoteRequestTests.m */,
+				BEAEB4A81A3C96D2003D26F6 /* Supporting Files */,
+			);
+			path = DMRemoteRequestTests;
+			sourceTree = "<group>";
+		};
+		BEAEB4A81A3C96D2003D26F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4A91A3C96D2003D26F6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEAEB4B41A3C96F0003D26F6 /* DMRemoteRequest */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4C11A3C98E6003D26F6 /* DMRemoteRequestPrivate.h */,
+				BEAEB4BD1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.h */,
+				BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m */,
+				BEAEB4BF1A3C98D6003D26F6 /* DMRemoteRequestProtocol.h */,
+			);
+			name = DMRemoteRequest;
+			sourceTree = "<group>";
+		};
+		BEAEB4C71A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4EA1A3C9939003D26F6 /* DMRemoteRequest */,
+				BEAEB4CB1A3C992B003D26F6 /* InterfaceController.h */,
+				BEAEB4CC1A3C992B003D26F6 /* InterfaceController.m */,
+				BEAEB4CE1A3C992B003D26F6 /* NotificationController.h */,
+				BEAEB4CF1A3C992B003D26F6 /* NotificationController.m */,
+				BEAEB4D11A3C992B003D26F6 /* Images.xcassets */,
+				BEAEB4C81A3C992A003D26F6 /* Supporting Files */,
+			);
+			path = "DMRemoteRequest WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		BEAEB4C81A3C992A003D26F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4C91A3C992A003D26F6 /* Info.plist */,
+				BEAEB4CA1A3C992A003D26F6 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEAEB4D91A3C992B003D26F6 /* DMRemoteRequest WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4DC1A3C992B003D26F6 /* Interface.storyboard */,
+				BEAEB4DE1A3C992B003D26F6 /* Images.xcassets */,
+				BEAEB4DA1A3C992B003D26F6 /* Supporting Files */,
+			);
+			path = "DMRemoteRequest WatchKit App";
+			sourceTree = "<group>";
+		};
+		BEAEB4DA1A3C992B003D26F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4DB1A3C992B003D26F6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEAEB4EA1A3C9939003D26F6 /* DMRemoteRequest */ = {
+			isa = PBXGroup;
+			children = (
+				BEAEB4EB1A3C9949003D26F6 /* DMRemoteRequestObserver.h */,
+				BEAEB4EC1A3C9949003D26F6 /* DMRemoteRequestObserver.m */,
+			);
+			name = DMRemoteRequest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEAEB48A1A3C96D2003D26F6 /* DMRemoteRequest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEAEB4AE1A3C96D2003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest" */;
+			buildPhases = (
+				BEAEB4871A3C96D2003D26F6 /* Sources */,
+				BEAEB4881A3C96D2003D26F6 /* Frameworks */,
+				BEAEB4891A3C96D2003D26F6 /* Resources */,
+				BEAEB4E91A3C992B003D26F6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEAEB4E11A3C992B003D26F6 /* PBXTargetDependency */,
+			);
+			name = DMRemoteRequest;
+			productName = DMRemoteRequest;
+			productReference = BEAEB48B1A3C96D2003D26F6 /* DMRemoteRequest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEAEB4A31A3C96D2003D26F6 /* DMRemoteRequestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEAEB4B11A3C96D2003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequestTests" */;
+			buildPhases = (
+				BEAEB4A01A3C96D2003D26F6 /* Sources */,
+				BEAEB4A11A3C96D2003D26F6 /* Frameworks */,
+				BEAEB4A21A3C96D2003D26F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEAEB4A61A3C96D2003D26F6 /* PBXTargetDependency */,
+			);
+			name = DMRemoteRequestTests;
+			productName = DMRemoteRequestTests;
+			productReference = BEAEB4A41A3C96D2003D26F6 /* DMRemoteRequestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BEAEB4C51A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEAEB4E61A3C992B003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest WatchKit Extension" */;
+			buildPhases = (
+				BEAEB4C21A3C992A003D26F6 /* Sources */,
+				BEAEB4C31A3C992A003D26F6 /* Frameworks */,
+				BEAEB4C41A3C992A003D26F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEAEB4D81A3C992B003D26F6 /* PBXTargetDependency */,
+			);
+			name = "DMRemoteRequest WatchKit Extension";
+			productName = "DMRemoteRequest WatchKit Extension";
+			productReference = BEAEB4C61A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		BEAEB4D41A3C992B003D26F6 /* DMRemoteRequest WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEAEB4E31A3C992B003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest WatchKit App" */;
+			buildPhases = (
+				BEAEB4D31A3C992B003D26F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DMRemoteRequest WatchKit App";
+			productName = "DMRemoteRequest WatchKit App";
+			productReference = BEAEB4D51A3C992B003D26F6 /* DMRemoteRequest WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEAEB4831A3C96D2003D26F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "David Muzi";
+				TargetAttributes = {
+					BEAEB48A1A3C96D2003D26F6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					BEAEB4A31A3C96D2003D26F6 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = BEAEB48A1A3C96D2003D26F6;
+					};
+					BEAEB4C51A3C992A003D26F6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					BEAEB4D41A3C992B003D26F6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = BEAEB4861A3C96D2003D26F6 /* Build configuration list for PBXProject "DMRemoteRequest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEAEB4821A3C96D2003D26F6;
+			productRefGroup = BEAEB48C1A3C96D2003D26F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEAEB48A1A3C96D2003D26F6 /* DMRemoteRequest */,
+				BEAEB4A31A3C96D2003D26F6 /* DMRemoteRequestTests */,
+				BEAEB4C51A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension */,
+				BEAEB4D41A3C992B003D26F6 /* DMRemoteRequest WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEAEB4891A3C96D2003D26F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAEB49A1A3C96D2003D26F6 /* Main.storyboard in Resources */,
+				BEAEB49F1A3C96D2003D26F6 /* LaunchScreen.xib in Resources */,
+				BEAEB49C1A3C96D2003D26F6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4A21A3C96D2003D26F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4C41A3C992A003D26F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAEB4D61A3C992B003D26F6 /* DMRemoteRequest WatchKit App.app in Resources */,
+				BEAEB4D21A3C992B003D26F6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4D31A3C992B003D26F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAEB4DD1A3C992B003D26F6 /* Interface.storyboard in Resources */,
+				BEAEB4DF1A3C992B003D26F6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEAEB4871A3C96D2003D26F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAEB4971A3C96D2003D26F6 /* ViewController.m in Sources */,
+				BEAEB4C01A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m in Sources */,
+				BEAEB4F01A3CA1ED003D26F6 /* SomeOperation.m in Sources */,
+				BEAEB4941A3C96D2003D26F6 /* AppDelegate.m in Sources */,
+				BEAEB4911A3C96D2003D26F6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4A01A3C96D2003D26F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAEB4AB1A3C96D2003D26F6 /* DMRemoteRequestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEAEB4C21A3C992A003D26F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEAEB4D01A3C992B003D26F6 /* NotificationController.m in Sources */,
+				BEAEB4ED1A3C9949003D26F6 /* DMRemoteRequestObserver.m in Sources */,
+				BEAEB4CD1A3C992B003D26F6 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEAEB4A61A3C96D2003D26F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEAEB48A1A3C96D2003D26F6 /* DMRemoteRequest */;
+			targetProxy = BEAEB4A51A3C96D2003D26F6 /* PBXContainerItemProxy */;
+		};
+		BEAEB4D81A3C992B003D26F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEAEB4D41A3C992B003D26F6 /* DMRemoteRequest WatchKit App */;
+			targetProxy = BEAEB4D71A3C992B003D26F6 /* PBXContainerItemProxy */;
+		};
+		BEAEB4E11A3C992B003D26F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEAEB4C51A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension */;
+			targetProxy = BEAEB4E01A3C992B003D26F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEAEB4981A3C96D2003D26F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEAEB4991A3C96D2003D26F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BEAEB49D1A3C96D2003D26F6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEAEB49E1A3C96D2003D26F6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEAEB4AC1A3C96D2003D26F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BEAEB4AD1A3C96D2003D26F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEAEB4AF1A3C96D2003D26F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DMRemoteRequest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BEAEB4B01A3C96D2003D26F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DMRemoteRequest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BEAEB4B21A3C96D2003D26F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DMRemoteRequestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMRemoteRequest.app/DMRemoteRequest";
+			};
+			name = Debug;
+		};
+		BEAEB4B31A3C96D2003D26F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DMRemoteRequestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMRemoteRequest.app/DMRemoteRequest";
+			};
+			name = Release;
+		};
+		BEAEB4E41A3C992B003D26F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = DMRemoteRequest_WatchKit_Extension;
+				INFOPLIST_FILE = "DMRemoteRequest WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		BEAEB4E51A3C992B003D26F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				IBSC_MODULE = DMRemoteRequest_WatchKit_Extension;
+				INFOPLIST_FILE = "DMRemoteRequest WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		BEAEB4E71A3C992B003D26F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DMRemoteRequest WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BEAEB4E81A3C992B003D26F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DMRemoteRequest WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEAEB4861A3C96D2003D26F6 /* Build configuration list for PBXProject "DMRemoteRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEAEB4AC1A3C96D2003D26F6 /* Debug */,
+				BEAEB4AD1A3C96D2003D26F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEAEB4AE1A3C96D2003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEAEB4AF1A3C96D2003D26F6 /* Debug */,
+				BEAEB4B01A3C96D2003D26F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEAEB4B11A3C96D2003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEAEB4B21A3C96D2003D26F6 /* Debug */,
+				BEAEB4B31A3C96D2003D26F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEAEB4E31A3C992B003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEAEB4E41A3C992B003D26F6 /* Debug */,
+				BEAEB4E51A3C992B003D26F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BEAEB4E61A3C992B003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEAEB4E71A3C992B003D26F6 /* Debug */,
+				BEAEB4E81A3C992B003D26F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEAEB4831A3C96D2003D26F6 /* Project object */;
+}
