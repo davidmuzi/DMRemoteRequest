@@ -43,7 +43,8 @@ static NSString * const DMMethodNameKey = @"method";
     DMRemoteRequestCoordinator *commander = [self sharedInstance];
 
     NSString *msg = [NSString stringWithFormat:@"Class already registered for method %@", [protocolClass methodName]];
-    NSAssert(![commander.classes objectForKey:[protocolClass methodName]], msg);
+    
+    NSAssert(![[commander methodNameSet] containsObject:[protocolClass methodName]], msg);
     
     [commander.classes setObject:protocolClass forKey:[protocolClass methodName]];
     
@@ -52,6 +53,9 @@ static NSString * const DMMethodNameKey = @"method";
 + (void)registerBlockForMethod:(NSString *)method handler:(NSDictionary * (^)(NSDictionary *userInfo))handler {
     
     DMRemoteRequestCoordinator *commander = [self sharedInstance];
+
+    NSString *msg = [NSString stringWithFormat:@"Class already registered for method %@", method];
+    NSAssert(![[commander methodNameSet] containsObject:method], msg);
 
     [commander.blocks setObject:handler forKey:method];
 }
@@ -91,6 +95,17 @@ static NSString * const DMMethodNameKey = @"method";
     
     CFNotificationCenterRef const center = CFNotificationCenterGetDarwinNotifyCenter();
     CFNotificationCenterPostNotification(center, (__bridge CFStringRef)DMPrivateNotificationKey, NULL, NULL, YES);
+}
+
+#pragma mark - Helpers
+
+- (NSSet *)methodNameSet {
+    
+    NSMutableSet *set = [[NSMutableSet alloc] init];
+    [set addObjectsFromArray:_classes.allKeys];
+    [set addObjectsFromArray:_blocks.allKeys];
+    
+    return set;
 }
 
 @end

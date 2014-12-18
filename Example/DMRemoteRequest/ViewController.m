@@ -32,7 +32,7 @@
             [_spinner stopAnimating];
         }
         
-        return @{@"d":@"d"};
+        return nil;
     }];
 }
 
