@@ -14,6 +14,7 @@ static NSString * const DMMethodNameKey = @"method";
 @interface DMRemoteRequestCoordinator ()
 @property (nonatomic, strong) NSMutableDictionary *classes;
 @property (nonatomic, strong) NSMutableDictionary *blocks;
+@property (nonatomic, strong) NSMutableDictionary *asyncBlocks;
 
 @property (nonatomic, strong) NSOperationQueue *opQueue;
 @end
@@ -30,6 +31,7 @@ static NSString * const DMMethodNameKey = @"method";
         instance = [self new];
         instance.classes = [NSMutableDictionary new];
         instance.blocks = [NSMutableDictionary new];
+        instance.asyncBlocks = [NSMutableDictionary new];
         
         instance.opQueue = [[NSOperationQueue alloc] init];
         instance.opQueue.maxConcurrentOperationCount = 1;
@@ -43,7 +45,6 @@ static NSString * const DMMethodNameKey = @"method";
     DMRemoteRequestCoordinator *commander = [self sharedInstance];
 
     NSString *msg = [NSString stringWithFormat:@"Class already registered for method %@", [protocolClass methodName]];
-    
     NSAssert(![[commander methodNameSet] containsObject:[protocolClass methodName]], msg);
     
     [commander.classes setObject:protocolClass forKey:[protocolClass methodName]];
@@ -58,6 +59,17 @@ static NSString * const DMMethodNameKey = @"method";
     NSAssert(![[commander methodNameSet] containsObject:method], msg);
 
     [commander.blocks setObject:handler forKey:method];
+}
+
++ (void)registerAsyncBlockForMethod:(NSString *)method
+                            handler:(void (^)(NSDictionary *userInfo, CompletionHandler completion))handler {
+    
+    DMRemoteRequestCoordinator *commander = [self sharedInstance];
+    
+    NSString *msg = [NSString stringWithFormat:@"Class already registered for method %@", method];
+    NSAssert(![[commander methodNameSet] containsObject:method], msg);
+    
+    [commander.asyncBlocks setObject:handler forKey:method];
 }
 
 + (BOOL)handleCommand:(NSDictionary *)command reply:(void (^)(NSDictionary *))reply {
@@ -83,6 +95,14 @@ static NSString * const DMMethodNameKey = @"method";
         
         NSDictionary *response = block(command);
         reply(response);
+        
+        handled = YES;
+    }
+    else if ([commander.asyncBlocks.allKeys containsObject:methodName]) {
+        
+        void (^block)(NSDictionary*, CompletionHandler handler) = [commander.asyncBlocks objectForKey:methodName];
+        
+        block(command, reply);
         
         handled = YES;
     }

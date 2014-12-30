@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "DMRemoteRequestProtocol.h"
 
+typedef void (^CompletionHandler)(NSDictionary *results);
+
 @interface DMRemoteRequestCoordinator : NSObject
 
 /**
@@ -23,7 +25,17 @@
  *  @param method  the method that will be handled
  *  @param handler block to handle the command
  */
-+ (void)registerBlockForMethod:(NSString *)method handler:(NSDictionary * (^)(NSDictionary *userInfo))handler;
++ (void)registerBlockForMethod:(NSString *)method
+                       handler:(NSDictionary * (^)(NSDictionary *userInfo))handler;
+
+/**
+ *  Registers a block which can perform an asyncronous task before calling its completion handler
+ *
+ *  @param method  the method to be handled
+ *  @param handler block handler
+ */
++ (void)registerAsyncBlockForMethod:(NSString *)method
+                            handler:(void (^)(NSDictionary *userInfo, CompletionHandler completion))handler;
 
 /**
  *  This should be called from application:handleWatchKitExtensionRequest:reply:
