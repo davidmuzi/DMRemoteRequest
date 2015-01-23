@@ -1,8 +1,6 @@
 DMRemoteRequest
 ===============
 
-[![Circle CI](https://circleci.com/gh/davidmuzi/DMRemoteRequest.svg?style=svg)](https://circleci.com/gh/davidmuzi/DMRemoteRequest)
-
 iOS library which structures the handling and routing of requests originating from an Watch
 
 
