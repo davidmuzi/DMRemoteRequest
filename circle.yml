@@ -1,0 +1,4 @@
+language: objective-c
+
+general:
+  build_dir: Example
