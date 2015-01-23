@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "DMRemoteRequestCoordinator.h"
+#import "DMRemoteRequestRouter.h"
 
 @interface ViewController ()
 
@@ -19,11 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [DMRemoteRequestCoordinator registerBlockForMethod:@"getState" handler:^NSDictionary *(NSDictionary *userInfo) {
-        return @{@"name": [_segmentControl titleForSegmentAtIndex:_segmentControl.selectedSegmentIndex]};
-    }];
+    [[DMRemoteRequestRouter sharedRouter] registerBlock:^(NSDictionary *userInfo, void (^callback)(NSDictionary *)) {
+        callback(@{@"name": [_segmentControl titleForSegmentAtIndex:_segmentControl.selectedSegmentIndex]});
+    } forMethod:@"getState"];
     
-    [DMRemoteRequestCoordinator registerBlockForMethod:@"setSpin" handler:^NSDictionary *(NSDictionary *userInfo) {
+    [DMRemoteRequestRouter sharedRouter][@"setSpin"] = ^NSDictionary *(NSDictionary *userInfo) {
         
         if ([userInfo[@"state"] boolValue]) {
             [_spinner startAnimating];
@@ -33,13 +33,13 @@
         }
         
         return nil;
-    }];
+    };
 }
 
 - (IBAction)didTap:(id)sender {
 
     // notify the watch that something has updated on the host app
-    [DMRemoteRequestCoordinator notifyWatch];
+    [[DMRemoteRequestRouter sharedRouter] notifyWatch];
     
 }
 

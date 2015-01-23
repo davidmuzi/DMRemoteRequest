@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DMRemoteRequestCoordinator.h"
+#import "DMRemoteRequestRouter.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +23,7 @@
 
 - (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
     
-    [DMRemoteRequestCoordinator handleCommand:userInfo reply:reply];
+    [[DMRemoteRequestRouter sharedRouter] handleRequest:userInfo reply:reply];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -11,18 +11,14 @@
 @implementation SomeOperation
 
 + (void)load {
-    [DMRemoteRequestCoordinator registerClass:self];
-}
-
-+ (NSString *)methodName {
-    return @"getDate";
+    [[DMRemoteRequestRouter sharedRouter] registerClass:self forMethod:@"getDate"];
 }
 
 + (NSOperation *)operationWithUserInfo:(NSDictionary *)userInfo completionHandler:(void (^)(NSDictionary *results))handler {
     
     return [NSBlockOperation blockOperationWithBlock:^{
         
-        handler(@{@"date": NSDate.date});
+        handler(@{@"date": @"NSDate.date"});
         
     }];
 }

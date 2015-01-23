@@ -10,13 +10,6 @@
 @protocol DMRemoteRequestProtocol <NSObject>
 
 /**
- *  The method name which will handled by this class
- *
- *  @return method name
- */
-+ (NSString *)methodName;
-
-/**
  *  An operation to handle the command
  *
  *  @param userInfo command parameters

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DMRemoteRequestCoordinator.h"
+#import "DMRemoteRequestRouter.h"
 
 @interface SomeOperation : NSObject <DMRemoteRequestProtocol>
 

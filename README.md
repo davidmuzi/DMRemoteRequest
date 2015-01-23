@@ -1,7 +1,7 @@
 DMRemoteRequest
 ===============
 
-iOS library which structures the handling of requests originating from an Watch
+iOS library which structures the handling and routing of requests originating from an Watch
 
 
 ## Purpose
@@ -13,8 +13,8 @@ To easily facilitate communication to and from a watch application and its host 
 
 To the host app add:
 - DMRemoteRequestPrivate.h
-- DMRemoteRequestCoordinator.h
-- DMRemoteRequestCoordinator.m
+- DMRemoteRequestRouter.h
+- DMRemoteRequestRouter.m
 - DMRemoteRequestProtocol.h
 
 To the watch extension add:
@@ -31,22 +31,34 @@ In your AppDelegate pass the openApplication call to `DMRemoteRequest`
 ```obj-c
 - (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
     
-    [DMRemoteRequestCoordinator handleCommand:userInfo reply:reply];
+    [[]DMRemoteRequestRouter sharedRouter] handleCommand:userInfo reply:reply];
 }
 ```
 
 To handle a request from the watch, register a block or a class to handle it
 
 ```obj-c
-[DMRemoteRequestCoordinator registerBlockForMethod:@"getState" handler:^NSDictionary *(NSDictionary *userInfo) {
-    return @{@"state": @"All systems go!"};
-}];
+    [self.router registerBlock:^(NSDictionary *userInfo, void (^callback)(NSDictionary *)) {
+        callback(@{@"state": @"All systems go!"});
+    } forMethod:@"state"];
+```
+
+With a class:
+
+```obj-c
+[self.router registerClass:TestOperation.class forMethod:@"date"];
+```
+
+Or, using a subscript:
+
+```obj-c
+self.router[@"date"] = TestOperation.class;
 ```
 
 To send a notification to the watch, 
 
 ```obj-c
-[DMRemoteRequestCoordinator notifyWatch];
+[self.router notifyWatch];
 ```
 
 ### In Watch Extension

@@ -8,16 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "DMRemoteRequestRouter.h"
+#import "DMRemoteRequestObserver.h"
+#import "TestOperation.h"
 
 @interface DMRemoteRequestTests : XCTestCase
-
+@property (nonatomic, strong) DMRemoteRequestRouter *router;
 @end
 
 @implementation DMRemoteRequestTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    // Put setup code here. This method is called before the invocation of each test method in the class.s
+    
+    self.router = [DMRemoteRequestRouter sharedRouter];
 }
 
 - (void)tearDown {
@@ -25,15 +30,79 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testRegisterBlockWithSubscript {
+    
+    self.router[@"hello"] = ^(NSDictionary *userInfo, void (^callback)(NSDictionary *)) {
+        callback(@{@"response": @"world"});
+    };
+    
+    id block = self.router[@"hello"];
+    
+    XCTAssertNotNil(block, @"block not returned");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+- (void)testRegisterBlockWithMethod {
+    
+    [self.router registerBlock:^(NSDictionary *userInfo, void (^callback)(NSDictionary *)) {
+        callback(@{@"response": @"world"});
+    } forMethod:@"hello"];
+    
+    id block = self.router[@"hello"];
+    
+    XCTAssertNotNil(block, @"block not returned");
+}
+
+- (void)testRegisterClass {
+    
+    [self.router registerClass:TestOperation.class forMethod:@"date"];
+    
+    id classs = self.router[@"date"];
+    XCTAssertNotNil(classs, @"block not returned");
+}
+
+- (void)testRegisterClassWithSubscript {
+
+    self.router[@"date"] = TestOperation.class;
+    
+    id classs = self.router[@"date"];
+    XCTAssertNotNil(classs, @"block not returned");
+}
+
+- (void)testPerformClass {
+    
+    XCTestExpectation *expectation =
+    [self expectationWithDescription:@"class test"];
+    
+    self.router[@"date"] = TestOperation.class;
+    
+    [self.router handleRequest:@{DMMethodNameKey: @"date"} reply:^(NSDictionary *reply) {
+
+        XCTAssertTrue([reply[@"response"] isKindOfClass:NSDate.class], @"Expecting date");
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:1.0 handler:^(NSError *error) {
+        if (error) NSLog(@"error: %@", error.localizedDescription);
+    }];
+}
+
+- (void)testPerformBlock {
+    
+    XCTestExpectation *expectation =
+    [self expectationWithDescription:@"block test"];
+    
+    [self.router registerBlock:^(NSDictionary *userInfo, void (^callback)(NSDictionary *)) {
+        callback(@{@"response": @"world"});
+    } forMethod:@"hello"];
+    
+    [self.router handleRequest:@{DMMethodNameKey: @"hello"} reply:^(NSDictionary *reply) {
+        XCTAssertEqual(reply[@"response"], @"world", @"response not equal");
+        
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:1.0 handler:^(NSError *error) {
+        if (error) NSLog(@"error: %@", error.localizedDescription);
     }];
 }
 

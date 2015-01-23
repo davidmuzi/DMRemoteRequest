@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE445CE81A7206A700BA1B5C /* TestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE445CE71A7206A700BA1B5C /* TestOperation.m */; };
 		BEAEB4911A3C96D2003D26F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4901A3C96D2003D26F6 /* main.m */; };
 		BEAEB4941A3C96D2003D26F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4931A3C96D2003D26F6 /* AppDelegate.m */; };
 		BEAEB4971A3C96D2003D26F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4961A3C96D2003D26F6 /* ViewController.m */; };
@@ -14,7 +15,7 @@
 		BEAEB49C1A3C96D2003D26F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB49B1A3C96D2003D26F6 /* Images.xcassets */; };
 		BEAEB49F1A3C96D2003D26F6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB49D1A3C96D2003D26F6 /* LaunchScreen.xib */; };
 		BEAEB4AB1A3C96D2003D26F6 /* DMRemoteRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4AA1A3C96D2003D26F6 /* DMRemoteRequestTests.m */; };
-		BEAEB4C01A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m */; };
+		BEAEB4C01A3C98D6003D26F6 /* DMRemoteRequestRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestRouter.m */; };
 		BEAEB4CD1A3C992B003D26F6 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4CC1A3C992B003D26F6 /* InterfaceController.m */; };
 		BEAEB4D01A3C992B003D26F6 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAEB4CF1A3C992B003D26F6 /* NotificationController.m */; };
 		BEAEB4D21A3C992B003D26F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEAEB4D11A3C992B003D26F6 /* Images.xcassets */; };
@@ -65,6 +66,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE445CE61A7206A700BA1B5C /* TestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOperation.h; sourceTree = "<group>"; };
+		BE445CE71A7206A700BA1B5C /* TestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOperation.m; sourceTree = "<group>"; };
 		BEAEB48B1A3C96D2003D26F6 /* DMRemoteRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMRemoteRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAEB48F1A3C96D2003D26F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAEB4901A3C96D2003D26F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -78,8 +81,8 @@
 		BEAEB4A41A3C96D2003D26F6 /* DMRemoteRequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMRemoteRequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEAEB4A91A3C96D2003D26F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAEB4AA1A3C96D2003D26F6 /* DMRemoteRequestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMRemoteRequestTests.m; sourceTree = "<group>"; };
-		BEAEB4BD1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestCoordinator.h; path = "../../DMRemoteRequest/Host App/DMRemoteRequestCoordinator.h"; sourceTree = "<group>"; };
-		BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMRemoteRequestCoordinator.m; path = "../../DMRemoteRequest/Host App/DMRemoteRequestCoordinator.m"; sourceTree = "<group>"; };
+		BEAEB4BD1A3C98D6003D26F6 /* DMRemoteRequestRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestRouter.h; path = "../../DMRemoteRequest/Host App/DMRemoteRequestRouter.h"; sourceTree = "<group>"; };
+		BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMRemoteRequestRouter.m; path = "../../DMRemoteRequest/Host App/DMRemoteRequestRouter.m"; sourceTree = "<group>"; };
 		BEAEB4BF1A3C98D6003D26F6 /* DMRemoteRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestProtocol.h; path = "../../DMRemoteRequest/Host App/DMRemoteRequestProtocol.h"; sourceTree = "<group>"; };
 		BEAEB4C11A3C98E6003D26F6 /* DMRemoteRequestPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMRemoteRequestPrivate.h; path = ../../DMRemoteRequest/DMRemoteRequestPrivate.h; sourceTree = "<group>"; };
 		BEAEB4C61A3C992A003D26F6 /* DMRemoteRequest WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DMRemoteRequest WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				BEAEB4AA1A3C96D2003D26F6 /* DMRemoteRequestTests.m */,
+				BE445CE61A7206A700BA1B5C /* TestOperation.h */,
+				BE445CE71A7206A700BA1B5C /* TestOperation.m */,
 				BEAEB4A81A3C96D2003D26F6 /* Supporting Files */,
 			);
 			path = DMRemoteRequestTests;
@@ -196,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				BEAEB4C11A3C98E6003D26F6 /* DMRemoteRequestPrivate.h */,
-				BEAEB4BD1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.h */,
-				BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m */,
+				BEAEB4BD1A3C98D6003D26F6 /* DMRemoteRequestRouter.h */,
+				BEAEB4BE1A3C98D6003D26F6 /* DMRemoteRequestRouter.m */,
 				BEAEB4BF1A3C98D6003D26F6 /* DMRemoteRequestProtocol.h */,
 			);
 			name = DMRemoteRequest;
@@ -415,7 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAEB4971A3C96D2003D26F6 /* ViewController.m in Sources */,
-				BEAEB4C01A3C98D6003D26F6 /* DMRemoteRequestCoordinator.m in Sources */,
+				BEAEB4C01A3C98D6003D26F6 /* DMRemoteRequestRouter.m in Sources */,
 				BEAEB4F01A3CA1ED003D26F6 /* SomeOperation.m in Sources */,
 				BEAEB4941A3C96D2003D26F6 /* AppDelegate.m in Sources */,
 				BEAEB4911A3C96D2003D26F6 /* main.m in Sources */,
@@ -427,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEAEB4AB1A3C96D2003D26F6 /* DMRemoteRequestTests.m in Sources */,
+				BE445CE81A7206A700BA1B5C /* TestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +709,7 @@
 				BEAEB4E51A3C992B003D26F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BEAEB4E61A3C992B003D26F6 /* Build configuration list for PBXNativeTarget "DMRemoteRequest WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -711,6 +718,7 @@
 				BEAEB4E81A3C992B003D26F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
